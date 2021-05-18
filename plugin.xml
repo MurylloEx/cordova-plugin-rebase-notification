@@ -11,10 +11,11 @@
   <description>Creates and schedule local notifications</description>
   <keywords>notification, local notification, user notification</keywords>
   
-  <platform name="android">
-    <js-module name="RebaseNotifications" src="www/RebaseNotifications.js">
-      <clobbers target="window.RebaseNotifications" />
-    </js-module>
+  <js-module name="RebaseNotifications" src="www/RebaseNotifications.js">
+    <clobbers target="window.RebaseNotifications" />
+  </js-module>
+  
+  <platform name="android">  
     <config-file parent="/*" target="res/xml/config.xml">
       <feature name="RebaseNotifications">
         <param name="android-package" value="cordova-plugin-rebase-notification.RebaseNotifications" />
