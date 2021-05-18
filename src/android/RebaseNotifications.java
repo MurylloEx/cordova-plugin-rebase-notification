@@ -91,7 +91,7 @@ public class RebaseNotifications extends CordovaPlugin {
       
       notificationManager.notify(notificationId, notificationBuilder.build());
 
-      callbackContext.success(true);
+      callbackContext.success("true");
     }
 
 }
