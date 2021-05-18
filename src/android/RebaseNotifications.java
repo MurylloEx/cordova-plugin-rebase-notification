@@ -7,24 +7,23 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.annotation.SuppressLint;
+
 import android.app.Activity;
-import android.app.AlarmManager;
+import android.annotation.SuppressLint;
 import android.app.Notification;
-import android.app.NotificationChannel;
+import android.app.Notification.Builder;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.app.NotificationChannel;
+import android.app.AlarmManager;
+import android.net.Uri;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Bundle;
-import android.app.NotificationManager;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
 
 import java.io.File;
 
@@ -59,7 +58,7 @@ public class RebaseNotifications extends CordovaPlugin {
       Activity activity = this.cordova.getActivity();
       Context context = activity.getApplicationContext();
 
-      Intent intent = new Intent(context, activity.class);
+      Intent intent = new Intent(context, activity.getClass());
       intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
       PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -78,8 +77,8 @@ public class RebaseNotifications extends CordovaPlugin {
         notificationManager.createNotificationChannel(notificationChannel);
       }
 
-      NotificationCompat.Builder notificationBuilder = 
-        new NotificationCompat.Builder(context, channelId)
+      Builder notificationBuilder = 
+        new Builder(context, channelId)
           .setContentTitle(title)
           .setContentText(text)
           .setAutoCancel(false)
