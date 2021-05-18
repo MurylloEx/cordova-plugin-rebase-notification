@@ -23,6 +23,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.app.NotificationManager;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+
+import java.io.File;
+
 public class RebaseNotifications extends CordovaPlugin {
 
     @Override
