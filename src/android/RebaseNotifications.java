@@ -52,7 +52,6 @@ public class RebaseNotifications extends CordovaPlugin {
       String channelId, 
       String title, 
       String text, 
-      String iconPath,
       CallbackContext callbackContext) 
     {
       Activity activity = this.cordova.getActivity();
