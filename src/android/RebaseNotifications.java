@@ -36,8 +36,8 @@ public class RebaseNotifications extends CordovaPlugin {
         String channelId = args.getString(1);
         String title = args.getString(2);
         String text = args.getString(3);
-        String iconPath = args.getString(4);
-        this.showNotification(notificationId, channelId, title, text, iconPath, callbackContext);
+        //String iconPath = args.getString(4);
+        this.showNotification(notificationId, channelId, title, text, callbackContext);
         return true;
       }
       return false;
@@ -86,12 +86,12 @@ public class RebaseNotifications extends CordovaPlugin {
           .setContentIntent(pendingIntent)
           .setPriority(Notification.PRIORITY_MAX);
 
-      if (iconPath != null){
-          File mSaveBit = new File(iconPath);
-          String filePath = mSaveBit.getPath();
-          Bitmap bitmap = BitmapFactory.decodeFile(filePath);
-          notificationBuilder.setLargeIcon(bitmap);
-      }
+      //if (iconPath != null){
+      //    File mSaveBit = new File(iconPath);
+      //    String filePath = mSaveBit.getPath();
+      //    Bitmap bitmap = BitmapFactory.decodeFile(filePath);
+      //    notificationBuilder.setLargeIcon(bitmap);
+      //}
       
       notificationManager.notify(notificationId, notificationBuilder.build());
 
