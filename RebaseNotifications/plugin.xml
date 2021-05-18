@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin 
+  xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+  xmlns:android="http://schemas.android.com/apk/res/android" 
+  id="cordova,plugin-rebase-notification" 
+  version="0.0.1">
+
+  <license>MIT</license>
+  <name>RebaseNotifications</name>
+  <author>Muryllo Pimenta de Oliveira</author>
+  <description>Creates and schedule local notifications</description>
+  <keywords>notification, local notification, user notification</keywords>
+
+  <js-module name="RebaseNotifications" src="www/RebaseNotifications.js">
+    <clobbers target="cordova.plugins.RebaseNotifications" />
+  </js-module>
+  
+  <platform name="android">
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="RebaseNotifications">
+        <param name="android-package" value="cordova-plugin-rebase-notification.RebaseNotifications" />
+      </feature>
+    </config-file>
+    <config-file parent="/*" target="AndroidManifest.xml" />
+    <source-file src="src/android/RebaseNotifications.java" target-dir="src/cordova-plugin-rebase-notification/RebaseNotifications" />
+  </platform>
+
+</plugin>

@@ -1,0 +1,18 @@
+{
+  "name": "rebase-notifications",
+  "version": "0.0.1",
+  "description": "Creates and schedule local notifications.",
+  "main": "www/RebaseNotifications.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "notification",
+    "local",
+    "notification",
+    "user",
+    "notification"
+  ],
+  "author": "Muryllo Pimenta",
+  "license": "MIT"
+}
