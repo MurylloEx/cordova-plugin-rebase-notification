@@ -18,7 +18,7 @@
   <platform name="android">  
     <config-file parent="/*" target="res/xml/config.xml">
       <feature name="RebaseNotifications">
-        <param name="android-package" value="cordova.plugin.rebase.notification.RebaseNotifications" />
+        <param name="android-package" value="com.rebase.local.notifications" />
       </feature>
     </config-file>
     <config-file parent="/*" target="AndroidManifest.xml" />
