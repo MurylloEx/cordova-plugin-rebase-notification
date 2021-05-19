@@ -1,4 +1,4 @@
-<h1 align="center">Biblioteca UPE Plus (Driver)</h1>
+<h1 align="center">Rebase Cordova Plugin Notification</h1>
 <p align="center">Este plugin do cordova para Ionic foi criado especialmente para suprir a necessidade de exibir notificações através do Ionic, uma vez que o único plugin disponível para cordova (cordova-plugin-local-notification) não funciona corretamente em muitos casos de uso.</p>
 
 <p align="center">
@@ -9,7 +9,7 @@
     <img src="https://badgen.net/badge/author/MurylloEx/red?icon=label"/>
 </p>
 
-Para utilizá-la você precisa de um projeto Ionic e utilizar o comando descrito na seção abaixo.
+Para utilizá-lo você precisa de um projeto Ionic e utilizar o comando descrito na seção abaixo.
 
 ## Instalação
 
