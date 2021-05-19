@@ -14,7 +14,7 @@ Para utilizá-lo você precisa de um projeto Ionic e utilizar o comando descrito
 ## Instalação
 
 ```sh
-ionic cordova plugin add cordova-plugin-rebase-notification
+ionic cordova plugin add https://github.com/MurylloEx/cordova-plugin-rebase-notification.git
 npm install @rebase-team/notification
 ```
 
