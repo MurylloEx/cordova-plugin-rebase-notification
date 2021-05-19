@@ -18,11 +18,21 @@
   <platform name="android">  
     <config-file parent="/*" target="res/xml/config.xml">
       <feature name="RebaseNotifications">
-        <param name="android-package" value="com.rebase.local.notifications.RebaseNotiifications" />
+        <param name="android-package" value="com.rebase.local.notifications.RebaseNotifications" />
       </feature>
     </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <!--
+        Este é o receptor do evento da notificação no tempo desejado,
+        essa classe é responsável por disparar a notificação após um 
+        tempo especificado.
+      -->
+      <receiver android:name="com.rebase.local.notifications.RebaseReceiver" />
+    </config-file>
     <config-file parent="/*" target="AndroidManifest.xml" />
-    <source-file src="src/android/RebaseNotifications.java" target-dir="src/cordova-plugin-rebase-notification/RebaseNotifications" />
+    <source-file src="src/android/RebaseNotifications.java" target-dir="src/org/apache/cordova/rebase-notification" />
+    <source-file src="src/android/RebaseReceiver.java" target-dir="src/org/apache/cordova/rebase-notification" />
+    <source-file src="src/android/RebaseHelper.java" target-dir="src/org/apache/cordova/rebase-notification" />
   </platform>
 
 </plugin>
