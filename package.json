@@ -1,5 +1,5 @@
 {
-  "name": "rebase-notifications",
+  "name": "@rebase-team/notification",
   "version": "0.0.1",
   "description": "Creates and schedule local notifications.",
   "main": "www/RebaseNotifications.js",
