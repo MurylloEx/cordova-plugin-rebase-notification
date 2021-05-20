@@ -7,10 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "notification",
-    "local",
-    "notification",
-    "user",
+    "local notification",
+    "android",
+    "cordova",
+    "ionic",
     "notification"
   ],
   "author": "Muryllo Pimenta",
