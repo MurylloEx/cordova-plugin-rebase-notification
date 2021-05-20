@@ -4,21 +4,29 @@
   xmlns:android="http://schemas.android.com/apk/res/android" 
   id="cordova-plugin-rebase-notification" 
   version="0.0.1">
+
   <license>MIT</license>
   <name>RebaseNotifications</name>
   <author>Muryllo Pimenta de Oliveira</author>
   <description>Creates and schedule local notifications</description>
   <keywords>notification, local notification, user notification</keywords>
+
   <js-module name="RebaseNotifications" src="www/RebaseNotifications.js">
     <clobbers target="window.RebaseNotifications" />
   </js-module>
-  <platform name="android">
+  
+  <platform name="android">  
     <config-file parent="/*" target="res/xml/config.xml">
       <feature name="RebaseNotifications">
         <param name="android-package" value="com.rebase.local.notifications.RebaseNotifications" />
       </feature>
     </config-file>
-    <config-file parent="/manifest/application" target="AndroidManifest.xml">
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <!--
+        Este é o receptor do evento da notificação no tempo desejado,
+        essa classe é responsável por disparar a notificação após um 
+        tempo especificado.
+      -->
       <receiver android:name="com.rebase.local.notifications.RebaseReceiver" />
     </config-file>
     <config-file parent="/*" target="AndroidManifest.xml" />
@@ -26,13 +34,5 @@
     <source-file src="src/android/RebaseReceiver.java" target-dir="src/org/apache/cordova/rebase-notification" />
     <source-file src="src/android/RebaseHelper.java" target-dir="src/org/apache/cordova/rebase-notification" />
   </platform>
-  <platform name="ios">
-    <config-file parent="/*" target="config.xml">
-      <feature name="RebaseNotifications">
-        <param name="ios-package" value="RebaseNotifications" />
-      </feature>
-    </config-file>
-    <!--<source-file src="src/ios/RebaseNotifications.m" />-->
-    <dependency id="cordova-plugin-add-swift-support" version="1.5.0"/>
-  </platform>
+
 </plugin>
