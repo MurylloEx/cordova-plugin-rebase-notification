@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin 
-  xmlns="http://apache.org/cordova/ns/plugins/1.0" 
-  xmlns:android="http://schemas.android.com/apk/res/android" 
-  id="cordova-plugin-rebase-notification" 
-  version="0.0.1">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-rebase-notification" version="0.0.1">
   <license>MIT</license>
   <name>RebaseNotifications</name>
   <author>Muryllo Pimenta de Oliveira</author>
@@ -21,17 +17,12 @@
     <config-file parent="/manifest/application" target="AndroidManifest.xml">
       <receiver android:name="com.rebase.local.notifications.RebaseReceiver" />
     </config-file>
+    <config-file parent="/manifest" target="AndroidManifest.xml">
+      <uses-permission android:name="android.permission.VIBRATE" />
+    </config-file>
     <config-file parent="/*" target="AndroidManifest.xml" />
     <source-file src="src/android/RebaseNotifications.java" target-dir="src/org/apache/cordova/rebase-notification" />
     <source-file src="src/android/RebaseReceiver.java" target-dir="src/org/apache/cordova/rebase-notification" />
     <source-file src="src/android/RebaseHelper.java" target-dir="src/org/apache/cordova/rebase-notification" />
-  </platform>
-  <platform name="ios">
-    <config-file parent="/*" target="config.xml">
-      <feature name="RebaseNotifications">
-        <param name="ios-package" value="RebaseNotifications" />
-      </feature>
-    </config-file>
-    <source-file src="src/ios/RebaseNotifications.swift" />
   </platform>
 </plugin>

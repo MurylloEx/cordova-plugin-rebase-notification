@@ -41,7 +41,7 @@ public class RebaseNotifications extends CordovaPlugin {
         String title = args.getString(2);
         String text = args.getString(3);
         String iconPath = args.getString(4);
-
+        //Cria uma instância da classe RebaseHelper e invoca a notificação imediatamente
         RebaseHelper helper = new RebaseHelper(this.cordova.getActivity().getApplicationContext());
         helper.showNotification(this.cordova.getActivity(), 
           notificationId, channelId, title, text, iconPath, callbackContext);
@@ -55,7 +55,7 @@ public class RebaseNotifications extends CordovaPlugin {
         String text = args.getString(3);
         String iconPath = args.getString(4);
         long time = args.getLong(5);
-
+        //Cria uma instância da classe RebaseHelper e agenda a notificação para o tempo definido
         RebaseHelper helper = new RebaseHelper(this.cordova.getActivity().getApplicationContext());
         helper.scheduleNotification(notificationId, channelId, title, text, iconPath, time, callbackContext);
 
