@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-rebase-notification",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Creates and schedule local notifications.",
   "main": "www/RebaseNotifications.js",
   "scripts": {
