@@ -80,13 +80,19 @@ public class RebaseHelper {
       @SuppressLint("WrongConstant")
       NotificationChannel notificationChannel =
         new NotificationChannel(channelId, "Notifications", NotificationManager.IMPORTANCE_MAX);
-
+      
+      //Define o áudio padrão das notificações
+      AudioAttributes audioAttr = new AudioAttributes.Builder()
+        .setUsage(AudioAttributes.USAGE_NOTIFICATION)
+        .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
+        .build();
+      
       //Configura o canal de notificações
       notificationChannel.setDescription("Rebase Notifications");
       notificationChannel.enableLights(true);
       notificationChannel.enableVibration(true);
       notificationChannel.setVibrationPattern(new long[]{ 600, 400, 800 });
-      notificationChannel.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION), AudioAttributes.USAGE_NOTIFICATION);
+      notificationChannel.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION), audioAttr);
       notificationManager.createNotificationChannel(notificationChannel);
     }
     //Constrói a notificação e define seus atributos
