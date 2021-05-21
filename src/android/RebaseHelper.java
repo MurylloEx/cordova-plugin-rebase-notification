@@ -18,6 +18,7 @@ import android.net.Uri;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
+import android.media.AudioAttributes;
 import android.graphics.drawable.Icon;
 import android.content.res.AssetManager;
 
@@ -85,7 +86,7 @@ public class RebaseHelper {
       notificationChannel.enableLights(true);
       notificationChannel.enableVibration(true);
       notificationChannel.setVibrationPattern(new long[]{ 600, 400, 800 });
-      notificationChannel.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
+      notificationChannel.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION), AudioAttributes.USAGE_NOTIFICATION);
       notificationManager.createNotificationChannel(notificationChannel);
     }
     //Constrói a notificação e define seus atributos
