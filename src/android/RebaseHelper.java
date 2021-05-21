@@ -85,6 +85,7 @@ public class RebaseHelper {
       notificationChannel.enableLights(true);
       notificationChannel.enableVibration(true);
       notificationChannel.setVibrationPattern(new long[]{ 600, 400, 800 });
+      notificationChannel.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
       notificationManager.createNotificationChannel(notificationChannel);
     }
     //Constrói a notificação e define seus atributos
@@ -95,7 +96,6 @@ public class RebaseHelper {
         .setContentText(text)
         .setAutoCancel(false)
         .setContentIntent(pendingIntent)
-        .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
         .setPriority(Notification.PRIORITY_MAX);
     //Aciona a notificação no celular
     notificationManager.notify(notificationId, notificationBuilder.build());
