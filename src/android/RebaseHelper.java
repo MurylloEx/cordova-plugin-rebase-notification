@@ -98,7 +98,7 @@ public class RebaseHelper {
     //Constrói a notificação e define seus atributos
     Builder notificationBuilder = 
       new Builder(this.m_Context, channelId)
-        .setSmallIcon(Icon.createWithBitmap(this.getBitmapFromAsset(this.m_Context.getAssets(), iconPath)))
+        .setSmallIcon(Icon.createWithBitmap(this.getBitmapFromAsset(this.m_Context.getAssets(), "www/assets/" + iconPath)))
         .setContentTitle(title)
         .setContentText(text)
         .setAutoCancel(false)
